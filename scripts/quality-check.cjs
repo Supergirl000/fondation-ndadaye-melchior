@@ -62,6 +62,7 @@ const routes = [
           );
         });
         assert.equal(await page.locator("h1").count(), 1, `${route} h1`);
+        assert.equal(await page.getByText("Illustration générée par IA", { exact: true }).count(), 0, `${route} has no AI photo badge`);
         assert.equal(
           await page.evaluate(
             () => document.documentElement.scrollWidth > innerWidth,

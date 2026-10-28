@@ -11,6 +11,7 @@ export const schoolKitsActivity: Project = {
   description:
     "La Fondation NDADAYE Melchior a procédé à une remise de kits scolaires à des élèves.",
   image: {
+    provenance: "placeholder",
     src: "/images/fondation/school-kits-pending.svg",
     alt: "Emplacement réservé : les photographies de cette activité ne sont pas encore fournies ni autorisées pour publication.",
   },

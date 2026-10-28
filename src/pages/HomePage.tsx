@@ -20,8 +20,8 @@ export function HomePage() {
       <main id="main" tabIndex={-1} className="foundation-home">
         <Hero />
         <Pillars />
-        <Engagements />
         <Mission />
+        <Engagements />
         <Initiatives data={data} />
         <Journal data={data} />
         <Participation />

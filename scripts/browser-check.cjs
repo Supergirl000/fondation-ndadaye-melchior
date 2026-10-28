@@ -19,6 +19,7 @@ const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:5174';
         await Promise.all([...document.images].map(image=>image.decode().catch(()=>{})));
       });
       assert.equal(await page.locator('h1').count(),1);
+      assert.equal(await page.locator('.hp-image-note').count(),0);
       assert.equal((await page.locator('h1').innerText()).replace(/\s+/g,' ').trim(), 'Des communautés plus justes, plus fortes et plus durables.');
       if (width >= 1024) {
         const headingLines = await page.locator('h1').evaluate(element => Math.round(element.getBoundingClientRect().height / parseFloat(getComputedStyle(element).lineHeight)));
@@ -39,6 +40,11 @@ const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:5174';
     }
     await page.setViewportSize({width:375,height:900});
     await page.goto(origin);
+    await page.getByRole('button',{name:'Crédits visuels'}).click();
+    await page.locator('dialog[open]').waitFor();
+    assert.match(await page.locator('dialog[open]').innerText(), /illustrations générées par IA/);
+    assert.match(await page.locator('dialog[open]').innerText(), /Unsplash/);
+    await page.keyboard.press('Escape');
     const menu=page.getByRole('button',{name:'Ouvrir le menu'});
     await menu.click();
     await page.getByRole('navigation',{name:'Navigation principale'}).getByRole('link',{name:'Nos actions'}).click();

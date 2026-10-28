@@ -277,3 +277,14 @@ Aucune date de démonstration n’est présentée comme une publication officiel
 `scripts/browser-check.cjs` teste la nouvelle composition, ses destinations,
 le menu mobile et le fallback des images à cinq largeurs. Les captures récentes
 figurent dans `artifacts/redesign/` (non versionnées).
+
+### Provenance des visuels et crédits discrets
+
+Les badges superposés « Illustration générée par IA » ont été retirés. La nature
+illustrative des images reste expliquée dans les crédits visuels du footer,
+avec les licences tierces conservées. Le champ optionnel `Picture.provenance`
+distingue la provenance du visuel du statut confirmé ou fictif du contenu.
+Les illustrations de l’accueil portent `ai-illustration` et l’emplacement de la
+remise scolaire porte `placeholder`. Aucun visuel IA n’est présenté comme une
+photographie documentaire de cette activité. Voir la dernière mise à jour dans
+`HOMEPAGE-REDESIGN.md` pour le parcours et les tests actuels.

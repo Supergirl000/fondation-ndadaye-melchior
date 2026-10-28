@@ -1,4 +1,6 @@
 export interface Picture {
+  /** Provenance is independent of whether the associated activity is confirmed. */
+  provenance?: "ai-illustration" | "stock-illustration" | "foundation-activity" | "placeholder" | "browser-upload";
   src: string;
   alt: string;
   position?: string;

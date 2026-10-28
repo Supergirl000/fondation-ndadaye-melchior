@@ -2,11 +2,11 @@ import type { Picture } from "./models";
 
 /** Supplied AI illustrations, distinct from documentary activity photographs. */
 export const foundationIllustrations = {
-  community: { src: "/images/fondation/hero-communaute.webp", width: 1536, height: 365, alt: "Illustration IA : des femmes et des hommes réunis face à un paysage au coucher du soleil" },
-  dialogue: { src: "/images/fondation/dialogue-citoyen.webp", width: 535, height: 306, alt: "Illustration IA : une femme prend la parole dans un groupe de discussion citoyenne" },
-  justice: { src: "/images/fondation/droits-humains-justice.webp", width: 514, height: 306, alt: "Illustration IA symbolique : une balance de justice et des livres" },
-  development: { src: "/images/fondation/developpement-durable.webp", width: 467, height: 306, alt: "Illustration IA : plusieurs mains réunies autour d’un jeune arbre" },
-  solidarity: { src: "/images/fondation/solidarite-ensemble.webp", width: 334, height: 306, alt: "Illustration IA : des mains superposées en signe de solidarité" },
+  community: { provenance: "ai-illustration", src: "/images/fondation/hero-communaute.webp", width: 1536, height: 365, alt: "Illustration IA : des femmes et des hommes réunis face à un paysage au coucher du soleil" },
+  dialogue: { provenance: "ai-illustration", src: "/images/fondation/dialogue-citoyen.webp", width: 535, height: 306, alt: "Illustration IA : une femme prend la parole dans un groupe de discussion citoyenne" },
+  justice: { provenance: "ai-illustration", src: "/images/fondation/droits-humains-justice.webp", width: 514, height: 306, alt: "Illustration IA symbolique : une balance de justice et des livres" },
+  development: { provenance: "ai-illustration", src: "/images/fondation/developpement-durable.webp", width: 467, height: 306, alt: "Illustration IA : plusieurs mains réunies autour d’un jeune arbre" },
+  solidarity: { provenance: "ai-illustration", src: "/images/fondation/solidarite-ensemble.webp", width: 334, height: 306, alt: "Illustration IA : des mains superposées en signe de solidarité" },
 } satisfies Record<string, Picture>;
 
 export const homepageEditorial = {
@@ -30,3 +30,4 @@ export const homepageEditorial = {
     { title: "La force du collectif.", category: "SOLIDARITÉ", image: foundationIllustrations.solidarity },
   ],
 };
+

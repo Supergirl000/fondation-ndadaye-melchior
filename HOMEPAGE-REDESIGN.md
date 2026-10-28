@@ -78,3 +78,50 @@ manuelle. Aucun score Lighthouse ou test réseau mobile réel annoncé.
 - Bouton secondaire mieux délimité, survol léger désactivé en mouvement réduit ; alignement des icônes des trois piliers ajusté.
 - Modifications limitées à `src/components/HomeRedesign.tsx`, `src/data/homepage.ts`, `src/homepage.css` et au test de régression de l’accueil. Logo, dépôt de contenu, routes et administration inchangés.
 - Vérifications : captures et navigation aux largeurs 320/375/768/1024/1440, aucun débordement, aucune image cassée ; parcours publics et lightbox réussis ; lint et build TypeScript/Vite réussis. Le test vérifie aussi le texte exact, les trois lignes desktop et la visibilité du bouton principal dans 768 px de hauteur.
+
+## Mise à jour — photographies sans badges et parcours clarifié
+
+Cette mise à jour remplace les mentions précédentes de badges sur les images.
+Le composant `IllustrationNote` et tous ses rendus ont été retirés du hero, des
+engagements, de la mission, des actualités et de l’appel au contact. Ses styles
+`.hp-image-note` et le positionnement des légendes superposées ont été supprimés.
+La recherche de l’intitulé et du composant dans `src/` ne trouve plus de résultat.
+Les autres pages et le composant Photo partagé ne rendaient pas ce badge IA.
+Les crédits visuels accessibles dans le footer conservent l’explication des
+illustrations IA, les références Unsplash et les mentions de licence.
+Les textes alternatifs continuent d’indiquer la nature illustrative des visuels.
+
+Le hero affiche explicitement le nom de la Fondation et conserve son titre exact
+sur trois lignes desktop. L’espace supérieur est réduit, les séparations de la
+mosaïque affinées et la composition communautaire conservée. La mission officielle
+précède désormais les engagements. Les trois piliers gardent leur présentation
+horizontale sur desktop et empilée sur mobile. La transition vers l’activité réelle
+est resserrée ; cette activité dispose d’une présentation mise en avant avec son
+emplacement photographique explicite. L’appel final propose une conversation,
+sans répéter une nouvelle formule générique de mission.
+
+Le modèle Picture possède un champ optionnel `provenance` pour distinguer
+illustration IA, stock, photographie d’activité, emplacement et import local.
+Les cinq visuels fournis sont marqués `ai-illustration` ; l’image de l’activité
+scolaire est marquée `placeholder`. Ce champ optionnel ne modifie ni IndexedDB,
+ni ses contenus existants, ni l’interface du dépôt asynchrone.
+
+Fichiers modifiés :
+- `src/components/HomeRedesign.tsx`
+- `src/pages/HomePage.tsx`
+- `src/homepage.css`
+- `src/data/models.ts`, `src/data/homepage.ts`, `src/data/foundation.ts`
+- `scripts/browser-check.cjs`, `scripts/quality-check.cjs`
+- `HOMEPAGE-REDESIGN.md`, `README.md`
+
+Vérifications : lint, TypeScript dans le build Vite, régression de l’accueil aux
+cinq largeurs, présence des crédits IA/Unsplash, absence des badges dans 17 vues
+aux cinq largeurs, axe A/AA sans violation détectée, galerie et lightbox, CRUD
+administration et actualisation publique, imports, erreurs, quota et reset.
+Les tests utilisent des contextes isolés et n’effacent pas les données du client.
+Les captures sont dans `artifacts/redesign/` et `artifacts/quality/`.
+
+Limites : photographies scolaires et autorisations toujours absentes ; coordonnées
+officielles et actualités réelles à fournir. L’administration reste locale au
+navigateur. Aucune configuration de déploiement, aucun backend et aucun logo
+modifiés. Aucun déploiement effectué ; la version Render n’a pas été vérifiée.
