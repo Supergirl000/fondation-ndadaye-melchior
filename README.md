@@ -288,3 +288,17 @@ Les illustrations de l’accueil portent `ai-illustration` et l’emplacement de
 remise scolaire porte `placeholder`. Aucun visuel IA n’est présenté comme une
 photographie documentaire de cette activité. Voir la dernière mise à jour dans
 `HOMEPAGE-REDESIGN.md` pour le parcours et les tests actuels.
+
+### Accueil photographique actuel
+
+Le dernier brief remplace la mosaïque par un hero photographique pleine largeur,
+un panneau flottant des trois piliers, une introduction à deux colonnes et un
+bandeau mission éditorial. Le rendu est assemblé dans `HomeRedesign.tsx`, avec les
+textes du hero et des piliers dans `data/homepage.ts` et les styles dans
+`homepage.css`. Le hero réutilise le WebP communautaire fourni, préchargé, sans
+service externe. Les autres images restent chargées à la demande.
+
+Le compte rendu actuel et les limites de la référence absente figurent dans
+`REFERENCE-HOMEPAGE.md`. Les descriptions de mosaïque dans les comptes rendus
+antérieurs documentent les versions précédentes. Les crédits et provenances,
+le dépôt asynchrone, IndexedDB, le dashboard et les routes restent conservés.

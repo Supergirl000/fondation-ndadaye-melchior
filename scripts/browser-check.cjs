@@ -20,7 +20,7 @@ const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:5174';
       });
       assert.equal(await page.locator('h1').count(),1);
       assert.equal(await page.locator('.hp-image-note').count(),0);
-      assert.equal((await page.locator('h1').innerText()).replace(/\s+/g,' ').trim(), 'Des communautés plus justes, plus fortes et plus durables.');
+      assert.equal((await page.locator('h1').innerText()).replace(/\s+/g,' ').trim(), 'La dignité de tous. Un avenir à construire ensemble.');
       if (width >= 1024) {
         const headingLines = await page.locator('h1').evaluate(element => Math.round(element.getBoundingClientRect().height / parseFloat(getComputedStyle(element).lineHeight)));
         assert.equal(headingLines,3,`Three balanced headline lines at ${width}px`);
@@ -28,15 +28,20 @@ const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:5174';
       }
       assert.equal(await page.locator('main section').count(),7);
       assert.equal(await page.locator('.hp-pillar').count(),3);
-      assert.equal(await page.locator('.hp-engagement').count(),4);
+      assert.equal(await page.locator('.hp-engagement-photo').count(),1);
+      const hero=await page.locator('.hp-hero').boundingBox();
+      const pillars=await page.locator('.hp-pillars').boundingBox();
+      assert.equal(Math.round(hero.width),width);
+      assert.ok(pillars.y < hero.y + hero.height, 'Pillars overlap hero');
+      assert.equal(await page.locator('.hp-hero-background').evaluate(el=>getComputedStyle(el).backgroundSize),'cover');
       assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth),false);
       assert.ok(await page.locator('img').evaluateAll(images=>images.every(image=>image.naturalWidth>0)));
-      const mainImages = await page.locator('.hp-hero img,.hp-engagement img').evaluateAll(images=>images.map(image=>image.currentSrc));
+      const mainImages = await page.locator('.hp-engagement-photo img').evaluateAll(images=>images.map(image=>image.currentSrc));
       assert.ok(mainImages.every(src=>src.includes('/images/fondation/')));
       assert.ok(await page.getByRole('heading',{name:'Distribution de kits scolaires aux élèves'}).count());
       assert.ok(!(await page.locator('.hp-activity img').getAttribute('src')).includes('.webp'));
       await page.screenshot({path:`artifacts/redesign/home-${width}.png`,fullPage:true});
-      console.log(`PASS: homepage ${width}px, seven sections, three pillars, four commitments, supplied images, confirmed activity only`);
+      console.log(`PASS: homepage ${width}px, seven sections, three pillars, editorial engagement, supplied images, confirmed activity only`);
     }
     await page.setViewportSize({width:375,height:900});
     await page.goto(origin);
@@ -60,9 +65,10 @@ const origin = process.env.PREVIEW_URL || 'http://127.0.0.1:5174';
       await page.locator('main h1').waitFor();
       assert.equal(await page.locator('.public-error').count(),0,link);
     }
-    await page.route('**/images/fondation/hero-communaute.webp',route=>route.abort());
+    await page.route('**/images/fondation/dialogue-citoyen.webp',route=>route.abort());
     await page.goto(origin);
-    await page.locator('.hp-hero img[src="/images/fallback.svg"]').waitFor();
+    await page.locator('.hp-engagement-photo').scrollIntoViewIfNeeded();
+    await page.locator('.hp-engagement-photo img[src="/images/fallback.svg"]').waitFor();
     await page.unrouteAll();
     assert.deepEqual(errors,[]);
     console.log('PASS: homepage destinations, mobile menu, Escape focus restoration, image failure fallback, no runtime errors');

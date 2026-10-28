@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router";
 import { Menu, X } from "lucide-react";
 import { organization } from "../config/organization";
-import { siteContent } from "../data/site";
 import type { HomeContent } from "../data/home";
 import { Arrow } from "./ui";
 
@@ -12,7 +11,7 @@ export function Brand() {
       <img src={organization.logo} width="43" height="43" alt="" />
       <span>
         {organization.name}
-        <small>{siteContent.brandDescriptor}</small>
+        <small>{organization.mission}</small>
       </span>
     </Link>
   );
@@ -81,7 +80,7 @@ export function Header({
               to="/contact"
               onClick={() => setOpen(false)}
             >
-              Contact <Arrow />
+              Nous contacter <Arrow />
             </NavLink>
           </nav>
         </div>

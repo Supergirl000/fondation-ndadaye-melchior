@@ -11,17 +11,16 @@ export const foundationIllustrations = {
 
 export const homepageEditorial = {
   hero: {
-    eyebrow: "DROITS HUMAINS · DÉMOCRATIE · DÉVELOPPEMENT DURABLE",
-    title: "Des communautés",
-    emphasis: "plus justes,",
-    continuation: "plus fortes",
-    ending: "et plus durables.",
+    eyebrow: "UNE FONDATION POUR LA DIGNITÉ ET L’AVENIR",
+    title: "La dignité de tous.",
+    emphasis: "Un avenir",
+    ending: "à construire ensemble.",
     description: "La Fondation NDADAYE Melchior œuvre pour la promotion des droits humains, de la démocratie et du développement durable.",
   },
   pillars: [
-    { title: "Droits humains", description: "Promouvoir la dignité, l’égalité et le respect des droits fondamentaux." },
-    { title: "Démocratie", description: "Encourager la participation citoyenne et les valeurs démocratiques." },
-    { title: "Développement durable", description: "Contribuer à un avenir inclusif et durable." },
+    { title: "Droits humains", description: "La dignité, l’égalité et les droits de chacun." },
+    { title: "Démocratie", description: "La voix des citoyens et la participation de tous." },
+    { title: "Développement durable", description: "Des communautés résilientes et un avenir partagé." },
   ],
   engagements: [
     { title: "La dignité, pour chacun.", category: "DROITS HUMAINS", image: foundationIllustrations.justice },

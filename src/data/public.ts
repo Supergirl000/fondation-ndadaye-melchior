@@ -3,10 +3,11 @@ import type { AboutContent, GalleryItem, NewsArticle, Project } from "./models";
 
 export const publicNavigation = [
   { label: "Accueil", href: "/" },
-  { label: "Notre esprit", href: "/a-propos" },
+  { label: "À propos", href: "/a-propos" },
   { label: "Nos actions", href: "/projets" },
   { label: "Actualités", href: "/actualites" },
   { label: "Galerie", href: "/galerie" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const [forest, garden, growing] = homeContent.gallery.images;

@@ -152,8 +152,12 @@ const routes = [
       "auto",
     );
     const heroDelivery = await page
-      .locator(".hp-hero-panorama .photo")
-      .evaluate((img) => ({ source: img.currentSrc, width: img.naturalWidth }));
+      .locator(".hp-hero-background")
+      .evaluate(async (element) => {
+        const source = getComputedStyle(element).backgroundImage.slice(5,-2);
+        const image = new Image(); image.src = source; await image.decode();
+        return { source, width: image.naturalWidth };
+      });
     assert.ok(
       heroDelivery.source.includes("hero-communaute.webp"),
       "Hero uses the supplied lightweight WebP illustration",
