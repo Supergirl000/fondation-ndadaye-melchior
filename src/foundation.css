@@ -1,0 +1,168 @@
+/* Official identity: preserve the complete emblem and adapt its surroundings. */
+.site-header .header-inner {
+  min-height: 112px;
+  gap: 18px;
+}
+.site-header .brand,
+.site-footer .brand {
+  min-width: 0;
+  flex-shrink: 1;
+  gap: 12px;
+}
+.site-header .brand img,
+.site-footer .brand img {
+  width: 80px;
+  height: 72px;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 5px;
+  background: var(--ivory);
+  border: 0;
+  border-radius: 4px;
+}
+.site-header .brand > span,
+.site-footer .brand > span {
+  font-size: 21px;
+  line-height: 1.2;
+  max-width: 245px;
+  min-width: 0;
+}
+.brand small {
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+.site-footer .footer-top > div:first-child > p {
+  font:
+    15px/1.8 "Segoe UI",
+    sans-serif;
+  max-width: 340px;
+}
+.admin-app .admin-brand {
+  align-items: center;
+  gap: 9px;
+  min-width: 0;
+}
+.admin-app .admin-brand img {
+  width: 50px;
+  height: 48px;
+  flex-shrink: 0;
+  object-fit: contain;
+  padding: 3px;
+  background: var(--ivory);
+  border: 0;
+  border-radius: 3px;
+}
+.admin-app .admin-brand > span {
+  font-size: 18px;
+  line-height: 1.22;
+  min-width: 0;
+}
+.admin-app .admin-brand small {
+  font-size: 6px;
+  line-height: 1.6;
+}
+.foundation-collection {
+  padding: 32px;
+  border: 1px solid #b2c3ad;
+  margin-bottom: 35px;
+  background: var(--ivory);
+}
+.foundation-collection h2 {
+  font-size: clamp(30px, 3vw, 46px);
+  max-width: 780px;
+}
+.foundation-collection > p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 760px;
+  margin-top: 18px;
+}
+.foundation-collection .text-link {
+  margin-top: 16px;
+}
+.belief-strip > .shell > span:last-child {
+  display: inline;
+}
+.admin-foundation-note {
+  margin-bottom: 28px;
+  padding: 20px;
+  border: 1px solid #bdcdb5;
+  background: var(--ivory);
+  border-radius: 4px;
+}
+.admin-foundation-note h2 {
+  font-size: 26px;
+  margin-bottom: 12px;
+}
+.admin-foundation-note p {
+  font-size: 12px;
+  color: var(--muted);
+}
+.admin-foundation-note .text-link {
+  margin-top: 12px;
+}
+@media (max-width: 920px) {
+  .site-header .brand > span,
+  .site-footer .brand > span {
+    font-size: 20px;
+    max-width: 240px;
+  }
+  .admin-app .admin-brand > span {
+    font-size: 16px;
+  }
+}
+@media (max-width: 700px) {
+  .site-header .header-inner {
+    min-height: 102px;
+    gap: 12px;
+  }
+  .site-header .brand {
+    gap: 9px;
+  }
+  .site-header .brand img {
+    width: 60px;
+    height: 56px;
+    padding: 3px;
+  }
+  .site-header .brand > span {
+    font-size: 17px;
+    max-width: 205px;
+  }
+  .site-header .brand small {
+    font-size: 5px;
+    letter-spacing: 0.06em;
+  }
+  .site-footer .brand img {
+    width: 70px;
+    height: 64px;
+  }
+  .site-footer .brand > span {
+    font-size: 21px;
+    max-width: 215px;
+  }
+  .demo-bar {
+    font-size: 8px;
+  }
+  .foundation-collection {
+    padding: 24px 20px;
+  }
+  .foundation-collection h2 {
+    font-size: 33px;
+  }
+  .foundation-collection > p:not(.eyebrow) {
+    font-size: 12px;
+  }
+}
+@media (max-width: 370px) {
+  .site-header .brand > span {
+    font-size: 15px;
+  }
+  .site-header .brand img {
+    width: 54px;
+    height: 50px;
+  }
+  .site-footer .brand > span {
+    font-size: 19px;
+  }
+}

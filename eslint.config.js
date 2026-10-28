@@ -1,0 +1,28 @@
+import js from "@eslint/js";
+import tseslint from "typescript-eslint";
+import hooks from "eslint-plugin-react-hooks";
+import globals from "globals";
+
+export default tseslint.config(
+  { ignores: ["dist/**", "artifacts/**", "node_modules/**"] },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  {
+    files: ["src/**/*.{ts,tsx}"],
+    languageOptions: { globals: globals.browser },
+    plugins: { "react-hooks": hooks },
+    rules: {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "error",
+    },
+  },
+  {
+    files: ["*.js", "vite.config.ts"],
+    languageOptions: { globals: globals.node },
+  },
+  {
+    files: ["scripts/**/*.cjs"],
+    languageOptions: { globals: { ...globals.node, ...globals.browser } },
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
+);

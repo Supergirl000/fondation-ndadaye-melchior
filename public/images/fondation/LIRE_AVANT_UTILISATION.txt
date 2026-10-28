@@ -1,0 +1,23 @@
+# Fondation NDADAYE Melchior — Visuels illustratifs (prototype)
+
+Ces 11 images sont des illustrations générées par IA puis exportées individuellement au format WebP. Elles ne sont **pas** des photographies documentaires de la Fondation ni des événements réels.
+Ne les attribuez pas à des activités réellement réalisées par l'association.
+
+Utilisation suggérée :
+- hero-communaute.webp : visuel de bannière / hero
+- dialogue-citoyen.webp : dialogue, démocratie et participation
+- developpement-durable.webp : développement durable
+- droits-humains-justice.webp : droits humains et justice (visuel symbolique)
+- education-jeunesse.webp : secteur éducation (illustration)
+- initiatives-communautaires.webp : développement communautaire
+- concertation-communautaire.webp : dialogue et cohésion sociale
+- solidarite-ensemble.webp : solidarité
+- paysage-inspirant.webp : visuel d'ambiance / territoire (illustration et non photo authentifiée du Burundi)
+- atelier-education.webp : éducation (illustration)
+- reunion-communautaire.webp : participation citoyenne
+
+Intégration dans React/Vite : placer ces fichiers dans `public/images/fondation/` et référencer `/images/fondation/nom-image.webp`.
+
+Ce dossier ne remplace pas les vraies photos de la remise de kits scolaires communiquées par la Fondation. Ces dernières nécessitent une autorisation de publication, en particulier lorsque des mineurs sont reconnaissables.
+
+Les images sont issues d'un montage généré ; celles utilisées dans les cartes ont une résolution adaptée à un affichage de taille modérée, pas à une très grande bannière plein écran.
